@@ -1,0 +1,20 @@
+name: "setup-dunolint"
+description: "Download and set up the dunolint executable from a GitHub release."
+author: "dunolint contributors"
+inputs:
+  dunolint-version:
+    description: "dunolint version to install."
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Install dunolint
+      shell: sh
+      run: |
+        "${{ github.action_path }}/install.sh"
+      env:
+        DUNOLINT_VERSION: ${{ inputs.dunolint-version }}
+        GH_TOKEN: ${{ github.token }}
+branding:
+  icon: "terminal"
+  color: "blue"
