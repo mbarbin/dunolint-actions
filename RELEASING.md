@@ -11,7 +11,9 @@ To create a new release for this repository:
 2. Use the local helper script `create-release-tag.sh` to generate the appropriate annotated tag for your release type (alpha, beta, rc, or stable):
 
    ```sh
-   ./create-release-tag.sh <release-type> <version>
+   Usage: ./create-release-tag.sh <release-type> <version>
+    <release-type>: alpha | beta | rc | stable
+    <version>: version number, e.g. 1.0.0 or 1.0.0.1
    ```
 
    The script will suggest the next tag and prompt for confirmation before creating it. It will also verify that the computed tag matches the top section of `CHANGES.md` before proceeding.
