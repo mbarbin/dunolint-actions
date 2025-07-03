@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-setup-dunolint:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dunolint using setup-dunolint action
+        uses: ./setup-dunolint
+        with:
+          dunolint-version: 0.0.20250403
+
+      - name: Check dunolint version
+        run: dunolint --version
