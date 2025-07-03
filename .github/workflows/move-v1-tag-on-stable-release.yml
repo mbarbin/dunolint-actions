@@ -1,0 +1,27 @@
+name: Move v1 Tag on Stable Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  move-v1-tag:
+    if: |
+      !contains(github.ref, '-alpha') &&
+      !contains(github.ref, '-beta') &&
+      !contains(github.ref, '-rc')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Fetch tags
+        run: git fetch --tags origin
+      - name: Move v1 tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          MAJOR_VERSION=$(echo "$TAG_NAME" | cut -d. -f1)
+          git tag -f "$MAJOR_VERSION" "$TAG_NAME"
+          git push -f origin "$MAJOR_VERSION"
