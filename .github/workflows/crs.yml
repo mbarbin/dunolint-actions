@@ -6,6 +6,7 @@ on:
       - "**" # This will match pull requests targeting any branch
 
 permissions:
+  contents: read
   pull-requests: write
 
 jobs:
