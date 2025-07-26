@@ -1,6 +1,6 @@
 # dunolint-actions
 
-Reusable GitHub Actions for the dunolint linter tool.
+Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) linter tool.
 
 [![CI](https://github.com/mbarbin/dunolint-actions/actions/workflows/ci.yml/badge.svg)](https://github.com/mbarbin/dunolint-actions/actions/workflows/ci.yml)
 [![Test](https://github.com/mbarbin/dunolint-actions/actions/workflows/test-setup-dunolint.yml/badge.svg)](https://github.com/mbarbin/dunolint-actions/actions/workflows/test-setup-dunolint.yml)
@@ -8,7 +8,7 @@ Reusable GitHub Actions for the dunolint linter tool.
 
 ## Actions
 
-- `setup-dunolint`: Installs the dunolint executable for use in workflows.
+- [`setup-dunolint`](./setup-dunolint/README.md): Install the dunolint executable for use in workflows.
 
 ## Usage
 
