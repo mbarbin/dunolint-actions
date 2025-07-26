@@ -25,4 +25,4 @@ The `dunolint-version` input is **mandatory** and upgrading it is the responsibi
 
 ## License
 
-See [LICENSE](../LICENSE).
+MIT. See [LICENSE](../LICENSE).

@@ -23,7 +23,7 @@ To create a new release for this repository:
 3. Push the new tag to the repository:
 
    ```sh
-   git push origin refs/tags/<tagname>
+   git push origin refs/tags/<tag_name>
    ```
 
 This will trigger the automated release workflow, which will publish the release on GitHub with the appropriate changelog entry.
