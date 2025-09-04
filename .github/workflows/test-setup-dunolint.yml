@@ -14,12 +14,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install dunolint using setup-dunolint action
         uses: ./setup-dunolint
         with:
-          dunolint-version: 0.0.20250403
+          dunolint-version: 0.0.20250804
 
       - name: Check dunolint version
         run: dunolint --version
