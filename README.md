@@ -9,7 +9,17 @@ Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) 
 ## Actions
 
 - [`setup-dunolint`](./setup-dunolint/README.md): Install the dunolint executable for use in workflows.
+- [`lint-check`](./lint-check/README.md): Run dunolint lint check on the project.
 
-## Usage
+## Compatibility
 
-See each action's `README` or `action.yml` for usage instructions.
+| Action Version     | CLI dunolint Version | Status | Note                |
+|:------------------:|:--------------------:|:------:|:--------------------|
+| v1.0.0-alpha.2     | 0.0.20250804         | ✅     | latest, recommended |
+
+_This table will be updated as new versions are released._
+
+## Usage, Documentation, Links & Resources
+
+- See each action's `README` or `action.yml` for detailed usage and options.
+- The documentation of the [dunolint](https://mbarbin.github.io/dunolint/) linter tool.
