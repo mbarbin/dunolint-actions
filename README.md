@@ -9,6 +9,7 @@ Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) 
 ## Actions
 
 - [`setup-dunolint`](./setup-dunolint/README.md): Install the dunolint executable for use in workflows.
+- [`lint-check`](./lint-check/README.md): Run dunolint lint check on the project.
 
 ## Usage
 

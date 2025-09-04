@@ -1,0 +1,20 @@
+name: "lint-check"
+description: "Run dunolint lint check on the project."
+author: "dunolint contributors"
+inputs:
+  dunolint-config:
+    description: "Path to the dunolint config file."
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Run dunolint lint check
+      shell: sh
+      run: |
+        "${{ github.action_path }}/lint-check.sh"
+      env:
+        DUNOLINT_CONFIG: ${{ inputs.dunolint-config }}
+branding:
+  icon: "check-circle"
+  color: "green"
