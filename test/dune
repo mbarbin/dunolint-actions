@@ -2,7 +2,7 @@
  (name main)
  (public_name gen-config)
  (package dunolint-actions-test)
- (libraries dunolint-lib))
+ (libraries sexplib0 dunolint-lib))
 
 (rule
  (alias runtest)
