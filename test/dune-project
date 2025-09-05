@@ -19,7 +19,10 @@
  (depends
   (ocaml
    (>= 4.14))
+  ;; The version of dunolint-lib used must match the version of the [dunolint]
+  ;; executable that is installed by the CI jobs, in order for the config to be
+  ;; of the expected format.
   (dunolint-lib
-   (>= 0.0.20250804))
+   (= 0.0.20250804))
   (sexplib0
    (>= v0.16.0))))
