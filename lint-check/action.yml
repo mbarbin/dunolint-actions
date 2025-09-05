@@ -3,9 +3,13 @@ description: "Run dunolint lint check on the project."
 author: "dunolint contributors"
 inputs:
   dunolint-config:
-    description: "Path to the dunolint config file."
+    description: "Path to the dunolint config file (resolved relative to the repository root, not the target directory)."
     required: false
     default: ""
+  directory:
+    description: "Directory in which dunolint should be run."
+    required: false
+    default: '.'
 runs:
   using: "composite"
   steps:
@@ -15,6 +19,7 @@ runs:
         "${{ github.action_path }}/lint-check.sh"
       env:
         DUNOLINT_CONFIG: ${{ inputs.dunolint-config }}
+        DUNOLINT_DIRECTORY: ${{ inputs.directory }}
 branding:
   icon: "check-circle"
   color: "green"

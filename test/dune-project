@@ -1,0 +1,28 @@
+(lang dune 3.20)
+
+(name dunolint-actions-test)
+
+(generate_opam_files)
+
+(license "MIT")
+
+(authors "Mathieu Barbin")
+
+(maintainers "Mathieu Barbin <opensource@mbarbin.org>")
+
+(source
+ (github mbarbin/dunolint-actions))
+
+(package
+ (name dunolint-actions-test)
+ (synopsis "A dunolint config to test the dunolint-actions repo")
+ (depends
+  (ocaml
+   (>= 4.14))
+  ;; The version of dunolint-lib used must match the version of the [dunolint]
+  ;; executable that is installed by the CI jobs, in order for the config to be
+  ;; of the expected format.
+  (dunolint-lib
+   (= 0.0.20250804))
+  (sexplib0
+   (>= v0.16.0))))

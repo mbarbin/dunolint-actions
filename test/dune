@@ -1,0 +1,17 @@
+(executable
+ (name main)
+ (public_name gen-config)
+ (package dunolint-actions-test)
+ (libraries dunolint-lib sexplib0))
+
+(rule
+ (alias runtest)
+ (action
+  (diff dunolint.sexp dunolint.sexp.gen)))
+
+(rule
+ (package dunolint-actions-test)
+ (action
+  (with-stdout-to
+   dunolint.sexp.gen
+   (run %{bin:gen-config}))))
