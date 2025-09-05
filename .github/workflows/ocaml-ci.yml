@@ -21,8 +21,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Setup dune
-        id: setup-dune
+      - name: Check build and tests
         # We review and manually update the action's commit used below.
         uses: mbarbin/setup-dune@aca57022a621c5a0153a4181544827c03fd17578
         with:
