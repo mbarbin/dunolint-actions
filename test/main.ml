@@ -4,14 +4,6 @@
 (*  SPDX-License-Identifier: MIT                                                 *)
 (*********************************************************************************)
 
-(* CR mbarbin: Next-steps
-
-   - [x] replace the output by an empty but valid config.
-   - [ ] start adding some rules to validate the setup.
-
-   Currently we have an invalid config ("Hello") so we can do one run and verify
-   that the lint-check will exit with a non-zero code. *)
-
 open Dunolint.Config.Std
 
 let skip_paths = [ path (glob "_build/**") ]
