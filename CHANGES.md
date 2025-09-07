@@ -1,4 +1,4 @@
-## 1.0.0-alpha.X (unreleased)
+## 1.0.0-alpha.2 (2025-09-07)
 
 ### Added
 
@@ -6,7 +6,8 @@
 
 ### Changed
 
-- Internal changes to testing and CI (#2, @mbarbin).
+- Upgrade to latest dunolint and versioned config (#5, @mbarbin).
+- Internal changes to testing and CI (#2, #4, @mbarbin).
 
 ## 1.0.0-alpha.1 (2025-07-03)
 
