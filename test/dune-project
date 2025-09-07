@@ -13,6 +13,8 @@
 (source
  (github mbarbin/dunolint-actions))
 
+(implicit_transitive_deps false)
+
 (package
  (name dunolint-actions-test)
  (synopsis "A dunolint config to test the dunolint-actions repo")
@@ -23,6 +25,4 @@
   ;; executable that is installed by the CI jobs, in order for the config to be
   ;; of the expected format.
   (dunolint-lib
-   (= 0.0.20250804))
-  (sexplib0
-   (>= v0.16.0))))
+   (= 0.0.20250907))))
