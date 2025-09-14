@@ -1,3 +1,9 @@
+## 1.0.0-XXX (unreleased)
+
+### Changed
+
+- Upgrade crs in actions to crs.0.0.20250914 (#6, @mbarbin).
+
 ## 1.0.0-alpha.2 (2025-09-07)
 
 ### Added
