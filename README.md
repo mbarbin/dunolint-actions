@@ -15,7 +15,9 @@ Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) 
 
 | Action Version     | CLI dunolint Version | Status | Note                |
 |:------------------:|:--------------------:|:------:|:--------------------|
-| v1.0.0-alpha.2     | 0.0.20250907         | ✅     | latest, recommended |
+| v1.0.0-alpha.3     | 0.0.20251006         | ✅     | latest, recommended |
+| <= v1.0.0-alpha.2  | >= 0.0.20251006      | 🔴     | not supported       |
+| v1.0.0-alpha.2     | 0.0.20250907         | 🟢     | supported           |
 | v1.0.0-alpha.2     | 0.0.20250804         | 🟢     | supported           |
 
 _This table will be updated as new versions are released._
