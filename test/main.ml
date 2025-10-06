@@ -4,15 +4,23 @@
 (*  SPDX-License-Identifier: MIT                                                 *)
 (*********************************************************************************)
 
-open Dunolint.Config.V0.Std
+open! Dunolint.Config.V1.Std
 
-let skip_paths = [ path (glob "_build/**") ]
-let rules = []
+let skip_paths = []
 
-let config =
-  let skip_subtree = cond [ or_ skip_paths, skip_subtree ] in
-  Dunolint.Config.v0 (Dunolint.Config.V0.create ~skip_subtree ~rules ())
+let rules =
+  [ `rule
+      (enforce
+         (dune_project
+            (dune_lang_version
+               (greater_than_or_equal_to (Dune_project.Dune_lang_version.create (3, 20))))))
+  ; `rule
+      (enforce
+         (dune_project (implicit_transitive_deps (equals `False))))
+  ]
 ;;
+
+let config = Dunolint.Config.v1 (Dunolint.Config.V1.create (skip_paths @ rules))
 
 let () =
   print_endline (Dunolint.Config.to_file_contents config ~generated_by:"main.ml");

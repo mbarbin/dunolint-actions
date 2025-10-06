@@ -25,4 +25,4 @@ jobs:
 
       - name: Test local test script
         run: |
-          ./setup-dunolint/test-install.sh 0.0.20250907
+          ./setup-dunolint/test-install.sh 0.0.20251006

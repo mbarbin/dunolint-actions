@@ -21,7 +21,7 @@ jobs:
       - name: Install dunolint
         uses: ./setup-dunolint
         with:
-          dunolint-version: 0.0.20250907
+          dunolint-version: 0.0.20251006
 
       - name: Check dunolint version
         run: dunolint --version
@@ -29,5 +29,4 @@ jobs:
       - name: Lint Check
         uses: ./lint-check
         with:
-          directory: ./test
-          dunolint-config: ./test/dunolint.sexp
+          workspace-root: ./test

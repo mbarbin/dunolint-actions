@@ -25,4 +25,4 @@
   ;; executable that is installed by the CI jobs, in order for the config to be
   ;; of the expected format.
   (dunolint-lib
-   (= 0.0.20250907))))
+   (= 0.0.20251006))))
