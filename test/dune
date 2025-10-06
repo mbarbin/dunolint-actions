@@ -7,11 +7,11 @@
 (rule
  (alias runtest)
  (action
-  (diff dunolint.sexp dunolint.sexp.gen)))
+  (diff dunolint dunolint.gen)))
 
 (rule
  (package dunolint-actions-test)
  (action
   (with-stdout-to
-   dunolint.sexp.gen
+   dunolint.gen
    (run %{bin:gen-config}))))
