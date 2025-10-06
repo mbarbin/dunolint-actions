@@ -13,7 +13,7 @@ By default, the action uses config autoloading. You can optionally override the 
 ```yaml
 - uses: mbarbin/dunolint-actions/lint-check@<ref>
   with:
-    root: ./path/to/workspace
+    workspace-root: ./path/to/workspace
     dunolint-config: ./path/to/dunolint-config-override.sexp
 ```
 

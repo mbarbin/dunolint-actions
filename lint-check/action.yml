@@ -6,7 +6,7 @@ inputs:
     description: "Path to the dunolint config file (resolved relative to the repository root, not the target directory)."
     required: false
     default: ""
-  root:
+  workspace-root:
     description: "Override the workspace root detection. This is the path to the workspace root where dunolint should be run."
     required: false
     default: ""
@@ -19,7 +19,7 @@ runs:
         "${{ github.action_path }}/lint-check.sh"
       env:
         DUNOLINT_CONFIG: ${{ inputs.dunolint-config }}
-        DUNOLINT_ROOT: ${{ inputs.root }}
+        DUNOLINT_WORKSPACE_ROOT: ${{ inputs.workspace-root }}
 branding:
   icon: "check-circle"
   color: "green"

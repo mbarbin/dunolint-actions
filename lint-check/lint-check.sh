@@ -4,13 +4,13 @@
 set -eu
 
 DUNOLINT_CONFIG="${DUNOLINT_CONFIG:-}"
-DUNOLINT_ROOT="${DUNOLINT_ROOT:-}"
+DUNOLINT_WORKSPACE_ROOT="${DUNOLINT_WORKSPACE_ROOT:-}"
 
 # Build the dunolint command with optional flags
 CMD="dunolint lint --check"
 
-if [ -n "$DUNOLINT_ROOT" ]; then
-  CMD="$CMD --root $DUNOLINT_ROOT"
+if [ -n "$DUNOLINT_WORKSPACE_ROOT" ]; then
+  CMD="$CMD --root $DUNOLINT_WORKSPACE_ROOT"
 fi
 
 if [ -n "$DUNOLINT_CONFIG" ]; then
