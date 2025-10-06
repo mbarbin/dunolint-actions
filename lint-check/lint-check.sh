@@ -4,22 +4,18 @@
 set -eu
 
 DUNOLINT_CONFIG="${DUNOLINT_CONFIG:-}"
-DUNOLINT_DIRECTORY="${DUNOLINT_DIRECTORY:-.}"
+DUNOLINT_ROOT="${DUNOLINT_ROOT:-}"
 
-# Resolve config path relative to original working directory if provided.
-if [ -n "$DUNOLINT_CONFIG" ]; then
-  # Convert to absolute path if it's relative, before changing directory.
-  case "$DUNOLINT_CONFIG" in
-    /*) CONFIG_PATH="$DUNOLINT_CONFIG" ;;
-    *) CONFIG_PATH="$(pwd)/$DUNOLINT_CONFIG" ;;
-  esac
+# Build the dunolint command with optional flags
+CMD="dunolint lint --check"
+
+if [ -n "$DUNOLINT_ROOT" ]; then
+  CMD="$CMD --root $DUNOLINT_ROOT"
 fi
 
-# Change to the specified directory.
-cd "$DUNOLINT_DIRECTORY"
-
 if [ -n "$DUNOLINT_CONFIG" ]; then
-  dunolint lint --check --config "$CONFIG_PATH"
-else
-  dunolint lint --check
+  CMD="$CMD --config $DUNOLINT_CONFIG"
 fi
+
+# Execute the command
+eval "$CMD"

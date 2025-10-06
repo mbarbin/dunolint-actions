@@ -29,5 +29,4 @@ jobs:
       - name: Lint Check
         uses: ./lint-check
         with:
-          directory: ./test
-          dunolint-config: ./test/dunolint.sexp
+          root: ./test
