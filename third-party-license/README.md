@@ -4,7 +4,7 @@ This project uses the following third-party tools:
 
 ---
 
-## reviewdog
+## reviewdog/reviewdog
 
 - Repository: https://github.com/reviewdog/reviewdog
 - License: MIT License
@@ -35,7 +35,7 @@ SOFTWARE.
 
 ---
 
-## crs (Code Review System)
+## mbarbin/crs
 
 - Repository: https://github.com/mbarbin/crs
 - License: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
@@ -63,7 +63,7 @@ and the LGPL-3.0 Linking Exception along with this library. If not, see
 
 ---
 
-## crs-actions
+## mbarbin/crs-actions
 
 - Repository: https://github.com/mbarbin/crs-actions
 - License: MIT License
