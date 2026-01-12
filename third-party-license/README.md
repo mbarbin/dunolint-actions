@@ -4,7 +4,7 @@ This project uses the following third-party tools:
 
 ---
 
-## reviewdog
+## reviewdog/reviewdog
 
 - Repository: https://github.com/reviewdog/reviewdog
 - License: MIT License
@@ -35,7 +35,7 @@ SOFTWARE.
 
 ---
 
-## crs (Code Review System)
+## mbarbin/crs
 
 - Repository: https://github.com/mbarbin/crs
 - License: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
@@ -63,12 +63,40 @@ and the LGPL-3.0 Linking Exception along with this library. If not, see
 
 ---
 
-## crs-actions
+## mbarbin/crs-actions
 
 - Repository: https://github.com/mbarbin/crs-actions
 - License: MIT License
 
 See the [crs-actions license](https://github.com/mbarbin/crs-actions/blob/main/LICENSE) for full details.
+
+---
+
+## mbarbin/dunolint
+
+- Repository: https://github.com/mbarbin/dunolint
+- License: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+This project uses the `dunolint` tool as an external binary.
+
+```text
+Dunolint - A tool to lint and help manage files in dune projects
+Copyright (C) 2024-2025 Mathieu Barbin <mathieu.barbin@gmail.com>
+
+Dunolint is free software; you can redistribute it and/or modify it under the
+terms of the GNU Lesser General Public License as published by the Free
+Software Foundation either version 3 of the License, or any later version,
+with the LGPL-3.0 Linking Exception.
+
+Dunolint is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License and
+the file `NOTICE.md` at the root of this repository for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+and the LGPL-3.0 Linking Exception along with this library. If not, see
+<http://www.gnu.org/licenses/> and <https://spdx.org>, respectively.
+```
 
 ---
 
