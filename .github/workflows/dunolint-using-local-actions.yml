@@ -21,7 +21,7 @@ jobs:
       - name: Install dunolint
         uses: ./setup-dunolint
         with:
-          dunolint-version: 0.0.20251006
+          dunolint-version: 0.0.20260103
 
       - name: Check dunolint version
         run: dunolint --version

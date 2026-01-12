@@ -13,7 +13,7 @@ let rules =
       (enforce
          (dune_project
             (dune_lang_version
-               (greater_than_or_equal_to (Dune_project.Dune_lang_version.create (3, 20))))))
+               (gte (Dune_project.Dune_lang_version.create (3, 20))))))
   ; `rule
       (enforce
          (dune_project (implicit_transitive_deps (equals `False))))
