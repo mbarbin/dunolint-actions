@@ -99,6 +99,15 @@ See the [reviewdog/action-setup license](https://github.com/reviewdog/action-set
 
 ---
 
+## ocaml-dune/setup-dune
+
+- Repository: https://github.com/ocaml-dune/setup-dune
+- License: MIT License
+
+See the [setup-dune license](https://github.com/ocaml-dune/setup-dune/blob/main/LICENSE.md) for full details.
+
+---
+
 ## softprops/action-gh-release
 
 - Repository: https://github.com/softprops/action-gh-release
