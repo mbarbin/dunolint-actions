@@ -25,4 +25,6 @@ jobs:
 
       - name: Test local test script
         run: |
-          ./setup-dunolint/test-install.sh 0.0.20251006
+          ./setup-dunolint/test-install.sh \
+            0.0.20251006 \
+            sha256:a9e6a634fae2d8b18d625e8a720c61d3c56247dd3b6e27f6464953a1b95e1c7e
