@@ -2,7 +2,7 @@
 
 ### Added
 
-- Add optional `dunolint-digest` input to `setup-dunolint` for binary integrity verification (@mbarbin).
+- Add optional `dunolint-digest` input to `setup-dunolint` for binary integrity verification (#13, @mbarbin).
 
 ## 1.0.0-alpha.3 (2025-10-06)
 
