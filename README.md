@@ -24,5 +24,5 @@ _This table will be updated as new versions are released._
 
 ## Usage, Documentation, Links & Resources
 
-- See each action's `README` or `action.yml` for detailed usage and options.
+- See each action's `README.md` and `action.yml` for detailed usage and options.
 - The documentation of the [dunolint](https://mbarbin.github.io/dunolint/) linter tool.

@@ -6,11 +6,23 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  attestations: read
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   test-setup-dunolint:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        include:
+          - os: ubuntu-latest
+            dunolint-digest: sha256:a9e6a634fae2d8b18d625e8a720c61d3c56247dd3b6e27f6464953a1b95e1c7e
+          - os: macos-latest
+            dunolint-digest: sha256:42a8c763a965c6bfdf48d1e4dd2067f6ee0ba817137e41b79bce32d8f9ec3ec5
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -20,6 +32,32 @@ jobs:
         uses: ./setup-dunolint
         with:
           dunolint-version: 0.0.20251006
+          dunolint-digest: ${{ matrix.dunolint-digest }}
 
       - name: Check dunolint version
         run: dunolint --version
+
+  test-digest-mismatch:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Install dunolint with wrong digest (should fail)
+        id: test-mismatch
+        continue-on-error: true
+        uses: ./setup-dunolint
+        with:
+          dunolint-version: 0.0.20251006
+          dunolint-digest: sha256:0000000000000000000000000000000000000000000000000000000000000000
+
+      - name: Verify digest mismatch was detected
+        run: |
+          if [ "${{ steps.test-mismatch.outcome }}" != "failure" ]; then
+            echo "Expected failure but got: ${{ steps.test-mismatch.outcome }}"
+            exit 1
+          fi
+          echo "Digest mismatch correctly detected"

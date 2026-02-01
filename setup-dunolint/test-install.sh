@@ -3,18 +3,20 @@
 # SPDX-License-Identifier: MIT
 set -eu
 
-# Usage: ./test-install.sh <version>
-if [ $# -ne 1 ]; then
-  echo "Usage: $0 <dunolint-version>" >&2
+# Usage: ./test-install.sh <version> [digest]
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+  echo "Usage: $0 <dunolint-version> [dunolint-digest]" >&2
   exit 1
 fi
 
 BINARY="dunolint"
 DUNOLINT_VERSION="$1"
+DUNOLINT_DIGEST="${2:-}"
 FAKE_TMPDIR="$(mktemp -d)"
 
 # Set up fake GitHub Actions environment variables
 export DUNOLINT_VERSION
+export DUNOLINT_DIGEST
 export RUNNER_TEMP="${FAKE_TMPDIR}"
 export RUNNER_OS="Linux"
 export GITHUB_PATH="${FAKE_TMPDIR}/github_path.txt"

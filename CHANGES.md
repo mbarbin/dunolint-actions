@@ -1,3 +1,9 @@
+## 1.0.0-alpha.4 (2026-02-01)
+
+### Added
+
+- Add optional `dunolint-digest` input to `setup-dunolint` for binary integrity verification (@mbarbin).
+
 ## 1.0.0-alpha.3 (2025-10-06)
 
 ### Changed
