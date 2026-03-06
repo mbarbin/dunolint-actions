@@ -27,4 +27,5 @@ jobs:
         with:
           version: "3.21.0"
           directory: ./test
+          cache-readonly: ${{ github.ref != 'refs/heads/main' }}
           steps: all
