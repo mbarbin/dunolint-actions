@@ -7,7 +7,7 @@ A reusable GitHub Action to download and install the [dunolint](https://github.c
 ```yaml
 - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
   with:
-    dunolint-version: 0.0.20250403
+    dunolint-version: 0.0.20260306
 ```
 
 - The `dunolint-version` input is required and must match a [published release](https://github.com/mbarbin/dunolint/releases/) of dunolint.
