@@ -15,7 +15,29 @@ defaults:
     shell: bash
 
 jobs:
-  test-setup-dunolint:
+  test-setup-dunolint-archive:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
+          - os: macos-latest
+            dunolint-digest: sha256:78c4ff97f21bde0993897c58d7a37cb0fd2d3909190ecdbefdb1a7e6a83fb4ba
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Install dunolint using setup-dunolint action (archive)
+        uses: ./setup-dunolint
+        with:
+          dunolint-version: 0.0.20260306
+          dunolint-digest: ${{ matrix.dunolint-digest }}
+
+      - name: Check dunolint version
+        run: dunolint --version
+
+  test-setup-dunolint-raw-binary:
     strategy:
       matrix:
         include:
@@ -28,7 +50,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - name: Install dunolint using setup-dunolint action
+      - name: Install dunolint using setup-dunolint action (raw binary fallback)
         uses: ./setup-dunolint
         with:
           dunolint-version: 0.0.20251006
