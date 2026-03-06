@@ -7,7 +7,7 @@ A reusable GitHub Action to download and install the [dunolint](https://github.c
 ```yaml
 - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
   with:
-    dunolint-version: 0.0.20250403
+    dunolint-version: 0.0.20260306
 ```
 
 - The `dunolint-version` input is required and must match a [published release](https://github.com/mbarbin/dunolint/releases/) of dunolint.
@@ -35,8 +35,8 @@ You can optionally verify the integrity of the downloaded binary by providing an
 ```yaml
 - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
   with:
-    dunolint-version: 0.0.20251006
-    dunolint-digest: sha256:a9e6a634fae2d8b18d625e8a720c61d3c56247dd3b6e27f6464953a1b95e1c7e
+    dunolint-version: 0.0.20260306
+    dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
 ```
 
 The digest format is `algorithm:hash`, where `algorithm` is currently limited to `sha256`. GitHub automatically provides SHA256 checksums for release assets, which you can find on the [dunolint releases page](https://github.com/mbarbin/dunolint/releases/).

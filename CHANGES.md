@@ -1,3 +1,9 @@
+## 1.0.0-alpha.5 (2026-03-06)
+
+### Added
+
+- Download artifacts binaries from compressed archives when available (#14, @mbarbin).
+
 ## 1.0.0-alpha.4 (2026-02-01)
 
 ### Added
