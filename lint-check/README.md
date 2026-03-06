@@ -47,7 +47,7 @@ jobs:
       - name: Setup dunolint
         uses: mbarbin/dunolint-actions/setup-dunolint@v1
         with:
-          dunolint-version: 0.0.20251006
+          dunolint-version: 0.0.20260306
       - name: Run lint check
         uses: mbarbin/dunolint-actions/lint-check@v1
 ```

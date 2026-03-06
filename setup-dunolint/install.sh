@@ -4,7 +4,7 @@
 set -eu
 
 if [ -z "${DUNOLINT_VERSION:-}" ]; then
-  echo "Error: DUNOLINT_VERSION environment variable must be set to a specific version (e.g., 0.0.20250403)." >&2
+  echo "Error: DUNOLINT_VERSION environment variable must be set to a specific version (e.g., 0.0.20260306)." >&2
   exit 1
 fi
 
