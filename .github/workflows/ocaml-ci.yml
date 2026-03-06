@@ -23,7 +23,7 @@ jobs:
 
       - name: Check build and tests
         # We review and manually update the action's commit used below.
-        uses: mbarbin/setup-dune@d38f7c80df59974cbe417c7f2a849219d54b4fdf # v2.0.0+patch-3
+        uses: mbarbin/setup-dune@ae2985bcdedc6fb24e5743d6f9dace9cf262b41c # v2.0.0+patch-4
         with:
           version: "3.21.0"
           directory: ./test
