@@ -22,15 +22,35 @@ bin_name="${BINARY}-${VERSION}-${os}-${arch}"
 url="https://github.com/${REPO}/releases/download/${VERSION}/${bin_name}"
 
 bin_path="${INSTALL_DIR}/${bin_name}"
+archive_name="${bin_name}.tar.gz"
+archive_url="https://github.com/${REPO}/releases/download/${VERSION}/${archive_name}"
+archive_path="${TMPDIR}/${archive_name}"
 
 echo "::group::Installing ${BINARY} https://github.com/${REPO}"
+
+# Try downloading the compressed archive first, fall back to raw binary.
+download_archive=true
 if command -v curl >/dev/null 2>&1; then
-  curl -sSLf -o "${bin_path}" "$url"
+  if ! curl -sSLf -o "${archive_path}" "${archive_url}"; then
+    download_archive=false
+    echo "Archive not available, falling back to raw binary download."
+    curl -sSLf -o "${bin_path}" "$url"
+  fi
 elif command -v wget >/dev/null 2>&1; then
-  wget -q -O "${bin_path}" "$url"
+  if ! wget -q -O "${archive_path}" "${archive_url}"; then
+    download_archive=false
+    echo "Archive not available, falling back to raw binary download."
+    wget -q -O "${bin_path}" "$url"
+  fi
 else
   echo "Error: curl or wget is required to download the ${BINARY} binary." >&2
   exit 1
+fi
+
+if [ "${download_archive}" = true ]; then
+  tar -xzf "${archive_path}" -C "${TMPDIR}"
+  mv "${TMPDIR}/${BINARY}" "${bin_path}"
+  rm -f "${archive_path}"
 fi
 echo "::endgroup::"
 
