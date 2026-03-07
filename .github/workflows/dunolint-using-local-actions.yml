@@ -18,10 +18,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
+      # The dunolint binary version used here must match the version of
+      # [dunolint-lib] pinned in [test/dune-project]. The test config files are
+      # generated using that library, and the binary must be able to parse them.
+      # See [test/dune-project] for upgrade instructions.
       - name: Install dunolint
         uses: ./setup-dunolint
         with:
-          dunolint-version: 0.0.20260103
+          dunolint-version: 0.0.20260211
+          dunolint-digest: sha256:8ce2817547a7b104b677e89baf6e6fcb8805811172ae9557505bdd866ee16fbc
 
       - name: Check dunolint version
         run: dunolint --version
