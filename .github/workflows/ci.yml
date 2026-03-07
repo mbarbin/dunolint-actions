@@ -24,12 +24,16 @@ jobs:
           find . -type f -name '*.sh' -exec shellcheck --shell=sh --format=tty {} +
 
       - name: Test local test script (archive)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           ./setup-dunolint/test-install.sh \
             0.0.20260306 \
             sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
 
       - name: Test local test script (raw binary fallback)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           ./setup-dunolint/test-install.sh \
             0.0.20251006 \
