@@ -35,4 +35,4 @@
   ;; - The [dunolint-version] input in [.github/workflows/dunolint-using-local-actions.yml]
   ;; - The digest in [setup-dunolint/DIGESTS.md] (if not already listed)
   (dunolint-lib
-   (= 0.0.20260211))))
+   (= 0.0.20260306))))

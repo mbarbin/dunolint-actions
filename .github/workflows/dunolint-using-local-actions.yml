@@ -25,8 +25,8 @@ jobs:
       - name: Install dunolint
         uses: ./setup-dunolint
         with:
-          dunolint-version: 0.0.20260211
-          dunolint-digest: sha256:8ce2817547a7b104b677e89baf6e6fcb8805811172ae9557505bdd866ee16fbc
+          dunolint-version: 0.0.20260306
+          dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
 
       - name: Check dunolint version
         run: dunolint --version

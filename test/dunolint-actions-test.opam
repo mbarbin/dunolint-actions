@@ -9,7 +9,7 @@ bug-reports: "https://github.com/mbarbin/dunolint-actions/issues"
 depends: [
   "dune" {>= "3.20"}
   "ocaml" {>= "4.14"}
-  "dunolint-lib" {= "0.0.20260211"}
+  "dunolint-lib" {= "0.0.20260306"}
   "odoc" {with-doc}
 ]
 build: [
