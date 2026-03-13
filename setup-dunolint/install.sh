@@ -86,15 +86,11 @@ echo "Digest verified: ${algorithm}:${actual_hash}"
 echo "::endgroup::"
 
 echo "::group::Verifying build attestation for ${bin_name}"
-if command -v gh >/dev/null 2>&1; then
-  if [ -z "${GH_TOKEN:-}" ]; then
-    echo "::warning::GH_TOKEN environment variable is not set. Skipping attestation verification."
-  else
-    GH_TOKEN="${GH_TOKEN}" gh attestation verify "${bin_path}" --owner mbarbin --signer-repo "${REPO}"
-  fi
-else
-  echo "::warning::gh CLI not found, skipping attestation verification."
+if ! command -v gh >/dev/null 2>&1; then
+  echo "Error: gh CLI is required to verify build attestation." >&2
+  exit 1
 fi
+gh attestation verify "${bin_path}" --repo "${REPO}" --format json
 echo "::endgroup::"
 
 chmod +x "${bin_path}"
