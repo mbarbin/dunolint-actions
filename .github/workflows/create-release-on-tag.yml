@@ -18,22 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Extract release notes from CHANGES.md
-        id: extract_changes
-        run: |
-          TAG="${{ github.ref_name }}"
-          # Remove leading 'v' if present for matching
-          VERSION="${TAG#v}"
-          # Extract the section for this version
-          awk "/^##[ ]*${VERSION//./\\.}/ {flag=1; print; next} /^## / && flag {exit} flag" CHANGES.md > RELEASE_BODY.md
-          # Fallback if nothing found
-          if [ ! -s RELEASE_BODY.md ]; then
-            echo "No changelog entry found for $VERSION" > RELEASE_BODY.md
-          fi
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
-        with:
-          tag_name: ${{ github.ref_name }}
-          prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') || contains(github.ref, '-rc') }}
-          draft: true
-          body_path: RELEASE_BODY.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: script/create-release.sh
