@@ -48,6 +48,7 @@ jobs:
         uses: mbarbin/dunolint-actions/setup-dunolint@v1
         with:
           dunolint-version: 0.0.20260306
+          dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
       - name: Run lint check
         uses: mbarbin/dunolint-actions/lint-check@v1
 ```

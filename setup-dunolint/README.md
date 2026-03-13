@@ -8,16 +8,18 @@ A reusable GitHub Action to download and install the [dunolint](https://github.c
 - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
   with:
     dunolint-version: 0.0.20260306
+    dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
 ```
 
 - The `dunolint-version` input is required and must match a [published release](https://github.com/mbarbin/dunolint/releases/) of dunolint.
+- The `dunolint-digest` input is required for binary integrity verification. See [Digest Verification](#digest-verification).
 - The action will install the `dunolint` binary and add it to the `PATH` for subsequent steps.
 
 ## Features
 
 - Downloads the correct binary for the runner OS and architecture.
-- Verifies the binary digest (optional, see [Digest Verification](#digest-verification)).
-- Verifies the build attestation (if `gh` CLI is available).
+- Verifies the binary digest (required, see [Digest Verification](#digest-verification)).
+- Verifies the build attestation (requires `gh` CLI).
 - Installs to a temporary directory and updates the `PATH`.
 
 ### Compatibility Note
@@ -30,14 +32,7 @@ Each version of the actions defined in this repository is tested and blessed for
 
 ### Digest Verification
 
-You can optionally verify the integrity of the downloaded binary by providing an expected digest. If the digest does not match, the action will fail.
-
-```yaml
-- uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
-  with:
-    dunolint-version: 0.0.20260306
-    dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
-```
+The `dunolint-digest` input is **mandatory**. The action verifies the integrity of the downloaded binary against the expected digest, and will fail if they do not match.
 
 The digest format is `algorithm:hash`, where `algorithm` is currently limited to `sha256`. GitHub automatically provides SHA256 checksums for release assets, which you can find on the [dunolint releases page](https://github.com/mbarbin/dunolint/releases/).
 
