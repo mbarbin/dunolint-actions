@@ -23,6 +23,20 @@ Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) 
 
 _This table will be updated as new versions are released._
 
+## Quick Start
+
+```yaml
+steps:
+  - uses: actions/checkout@<ref>
+  - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
+    with:
+      dunolint-version: 0.0.20260306
+      dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
+  - uses: mbarbin/dunolint-actions/lint-check@<ref>
+```
+
+Both `dunolint-version` and `dunolint-digest` are required inputs. See [DIGESTS.md](./setup-dunolint/DIGESTS.md) for known digest values.
+
 ## Usage, Documentation, Links & Resources
 
 - See each action's `README.md` and `action.yml` for detailed usage and options.

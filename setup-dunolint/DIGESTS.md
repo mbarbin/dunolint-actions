@@ -1,6 +1,6 @@
 # Known SHA256 Digests
 
-This file lists the SHA256 digests for dunolint binaries. Use these values with the `dunolint-digest` input to verify the integrity of the downloaded binary.
+This file lists the SHA256 digests for dunolint binaries. Use these values with the required `dunolint-digest` input of `setup-dunolint` to verify the integrity of the downloaded binary.
 
 Only the `linux-x86_64` platform is listed below, as it covers the most common CI runner configuration. For other platforms, please refer to the official [dunolint releases page](https://github.com/mbarbin/dunolint/releases/).
 
