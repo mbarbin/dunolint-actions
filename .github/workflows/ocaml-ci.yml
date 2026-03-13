@@ -8,6 +8,10 @@ on:
     branches:
       - "**" # This will match pull requests targeting any branch
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   ocaml-build-test:
     strategy:

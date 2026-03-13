@@ -1,3 +1,11 @@
+## 1.0.0-alpha.6 (2026-03-13)
+
+### Changed
+
+- **Breaking**: Build attestation verification now requires `gh` CLI (#24, @mbarbin).
+- **Breaking**: `dunolint-digest` input is now required in `setup-dunolint` for binary integrity verification (#24, @mbarbin).
+- Internal improvements to shell validation and release process (#24, @mbarbin).
+
 ## 1.0.0-alpha.5 (2026-03-06)
 
 ### Added

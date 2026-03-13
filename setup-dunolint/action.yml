@@ -6,9 +6,8 @@ inputs:
     description: "dunolint version to install."
     required: true
   dunolint-digest:
-    description: "Expected digest of the binary for integrity verification (e.g., sha256:abc123...). If provided, the action will fail if the downloaded binary does not match."
-    required: false
-    default: ""
+    description: "Expected digest of the binary for integrity verification (e.g., sha256:abc123...). The action will fail if the downloaded binary does not match."
+    required: true
 runs:
   using: "composite"
   steps:

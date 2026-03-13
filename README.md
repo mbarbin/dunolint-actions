@@ -15,13 +15,27 @@ Reusable GitHub Actions for the [dunolint](https://github.com/mbarbin/dunolint) 
 
 | Action Version     | CLI dunolint Version   | Status | Note                |
 |:------------------:|:----------------------:|:------:|:--------------------|
-| v1.0.0-alpha.5     | 0.0.20260306           | ✅     | latest, recommended |
-| v1.0.0-alpha.3–5   | 0.0.20251006–20260306  | 🟢     | supported           |
+| v1.0.0-alpha.6     | 0.0.20260306           | ✅     | latest, recommended |
+| v1.0.0-alpha.3–6   | 0.0.20251006–20260306  | 🟢     | supported           |
 | <= v1.0.0-alpha.2  | >= 0.0.20251006        | 🔴     | not supported       |
 | v1.0.0-alpha.2     | 0.0.20250907           | 🟢     | supported           |
 | v1.0.0-alpha.2     | 0.0.20250804           | 🟢     | supported           |
 
 _This table will be updated as new versions are released._
+
+## Quick Start
+
+```yaml
+steps:
+  - uses: actions/checkout@<ref>
+  - uses: mbarbin/dunolint-actions/setup-dunolint@<ref>
+    with:
+      dunolint-version: 0.0.20260306
+      dunolint-digest: sha256:b83c07dd352cd4bec36b872ac593f299972710baff70a62e7a4650e80d2460d4
+  - uses: mbarbin/dunolint-actions/lint-check@<ref>
+```
+
+Both `dunolint-version` and `dunolint-digest` are required inputs. See [DIGESTS.md](./setup-dunolint/DIGESTS.md) for known digest values.
 
 ## Usage, Documentation, Links & Resources
 
