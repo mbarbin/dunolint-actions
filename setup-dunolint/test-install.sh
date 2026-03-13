@@ -13,6 +13,7 @@ BINARY="dunolint"
 DUNOLINT_VERSION="$1"
 DUNOLINT_DIGEST="$2"
 FAKE_TMPDIR="$(mktemp -d)"
+trap 'rm -rf "${FAKE_TMPDIR}"' EXIT
 
 # Set up fake GitHub Actions environment variables
 export DUNOLINT_VERSION
@@ -45,6 +46,3 @@ if [ -f "${FAKE_TMPDIR}/github_path.txt" ]; then
   echo "GITHUB_PATH contents:"
   cat "${FAKE_TMPDIR}/github_path.txt"
 fi
-
-# Cleanup tempdir on exit
-trap 'rm -rf "${FAKE_TMPDIR}"' EXIT
