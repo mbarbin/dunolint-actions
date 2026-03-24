@@ -12,11 +12,8 @@ let rules =
   [ `rule
       (enforce
          (dune_project
-            (dune_lang_version
-               (gte (Dune_project.Dune_lang_version.create (3, 20))))))
-  ; `rule
-      (enforce
-         (dune_project (implicit_transitive_deps (equals `False))))
+            (dune_lang_version (gte (Dune_project.Dune_lang_version.create (3, 20))))))
+  ; `rule (enforce (dune_project (implicit_transitive_deps (equals `False))))
   ]
 ;;
 
